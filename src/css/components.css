@@ -1,0 +1,96 @@
+
+/*------------buttons--------- */
+
+.button-container {
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content__container--button {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* active button */
+.button-primary{
+    width: 200px;
+    height: 100px;
+    font-size: var(--font-size-base);
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 10px;
+    align-self: center;
+}
+.button-primary:hover {
+    background-color: var(--color-primary);
+}
+/* disabled button */
+
+.button-disabled{
+    width: 200px;
+    height: 100px;
+    font-size: var(--font-size-base);
+    border-radius: 4px;
+    margin: 10px;
+    align-self: center;
+    cursor: not-allowed;
+    
+}
+
+/*---------card component----------*/ 
+
+.card-container{
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card__container--paragraph{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.card-display{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.card__type--1{
+    width: 200px;
+    height: 300px;
+    margin-top: var(--spacing-small);
+    box-shadow: 0 8px 8px 8px rgba(27, 25, 27, 0.2);
+    transition: 0.3s;
+}
+
+.card__type--1 img, .card__type--2 img {
+    margin-top: 1rem;
+    width: 150px;
+    height: 170px; 
+}
+
+.card__type--1:hover{
+    box-shadow: 0 10px 10px 10px rgba(0,0,0,0.2);
+}
+
+.card__type--2{
+    width: 200px;
+    height: 300px;
+    margin-top: var(--spacing-small);
+    background-color: rgb(126, 96, 124);
+}
+
+/*-------- Modal ---------------* 

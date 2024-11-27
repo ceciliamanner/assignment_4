@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/variables.css" />
     <link rel="stylesheet" href="./css/tab.css" />
+    <link rel="stylesheet" href="./css/components.css" /> 
     <title>assignment 4</title>
 </head>
 <body>
@@ -19,7 +20,7 @@
              <div class="tabs__titles--container">
                 <button class="tabs-title tabs__title--active">Buttons</button>
                 <button class="tabs-title">Card</button>
-                <button class="tabs-title">Modals</button>
+                <button class="tabs-title">Modal</button>
                 <button class="tabs-title">Dropdowns</button>
                 <button class="tabs-title">Navigation Bars</button>
                 <button class="tabs-title">Alerts</button>
@@ -30,17 +31,45 @@
              <!-- Tabs description-->
               <div class="tabs__content--container">
 
+            <!-- button chapter-->
                 <article class="tabs__content tabs__content--active">
-                    <div>Buttons</div>
+                    <div class="button-container">
+                        <h2>Button</h2>
+                        <div class="content__container--button">
+                            <p>Buttons are the most basic interaction element in a user interface, as they allow users to perform actions or navigate the interface. Below you have two variations of a button, one primary and one disabled.</p>
+                            <button class="button-primary">Primary</button>
+                            <button class="button-disabled" disabled>Disabled</button>
+                        </div>
+                    </div>
                 </article>
 
+                <!-- card chapter-->
                 <article class="tabs__content">
-                    <div>Card</div>
+                    <div class="card-container">
+                        <h2>Card</h2>
+                        <div class="card__container--paragraph">
+                            <p>Cards are used to group information and make it easier to read. They can include images, text, buttons, and other elements. Cards are often clickable and are commonly used on websites to display a list of articles, products, or other types of content. Below you see two types of card, <b>elevated & filled:</b></p>
+
+                            <div class="card-display">
+                                 <!-- two variation of card-->
+                                <div class="card__type--1">
+                                <img src="./assets/images/acqua di parma product2 .webp"> 
+                                </div>
+                                <div class="card__type--2">
+                                <img src="./assets/images/acqua di parma product2 .webp"> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </article>
 
+                <!-- modal chapter-->
+
                 <article class="tabs__content">
-                    <div>Modals</div>
+                    <div>Modal</div>
                 </article>
+
+                
 
                 <article class="tabs__content">
                     <div>Dropdowns</div>
