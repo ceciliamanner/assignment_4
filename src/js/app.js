@@ -30,3 +30,25 @@ const menuContent = document.querySelector(".menu-content");
 menuToggle.addEventListener("click", () => {
     menuContent.classList.toggle('show');
 })
+
+
+// * Alert 
+
+const alertTab = document.querySelector(".alert-btn");
+const alertPop = document.querySelectorAll(".alert-popup");
+const closeAlert = document.querySelectorAll(".close-alert")
+
+alertTab.addEventListener("click", () => {
+    setTimeout(() => {
+        alertPop.forEach(alert => {
+            alert.classList.add("visible");
+        });
+    }, 500);
+});
+
+closeAlert.forEach(closeBtn => {                            //se mer här! 
+    closeBtn.addEventListener("click", (e) => {
+        const alert = e.target.closest(".alert-popup");
+        alert.classList.remove("visible");
+    });
+});

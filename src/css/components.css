@@ -17,37 +17,44 @@
     text-align: center;
 }
 
-/* active button */
+.button__container--items{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: var(--spacing-large);
+
+    
+}
+
 .button-primary{
     width: 200px;
     height: 100px;
     font-size: var(--font-size-base);
     border-radius: 4px;
     cursor: pointer;
-    margin: 10px;
     align-self: center;
 }
 .button-primary:hover {
     background-color: var(--color-primary);
 }
-/* disabled button */
 
 .button-disabled{
     width: 200px;
     height: 100px;
     font-size: var(--font-size-base);
     border-radius: 4px;
-    margin: 10px;
     align-self: center;
     cursor: not-allowed;
     
 }
 
+
 /*---------card component----------*/ 
 
 .card-container{
     width: 100%;
-    height: 70vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -90,10 +97,12 @@
     width: 200px;
     height: 300px;
     margin-top: var(--spacing-small);
-    background-color: rgb(126, 96, 124);
+    background-color: rgb(180, 192, 170);
 }
 
+
 /*-------- Modal ---------------*/
+
 
 /*-------- Dropdown ------------*/
 
@@ -126,7 +135,7 @@
     height: 40px;
     margin-top: 1rem;
     display: flex;
-    gap: 3rem;
+    gap: 2rem;
     padding: var(--spacing-x-small);
     background-color: var(--color-primary);
     border: 2px solid rgb(52, 77, 60);
@@ -137,17 +146,18 @@
 }
 
 .dropbtn{
-    width: 100px;
+    width: 80px;
     height: 20px;
     text-align: left;
     border: none;
+    font-family:'nunito';
     font-size: larger;
     background-color: var(--color-primary);
     
 }
 .dropbtn:hover{
     cursor: pointer;
-    background-color: rgb(198, 225, 193);
+    background-color: var(--color-primary);
 }
 
 .dropdown-content {
@@ -155,7 +165,7 @@
     width: 100px;
     text-align: left;
     line-height: 2rem;
-    background-color: rgb(198, 225, 193);
+    background-color: var(--color-primary);
 }
 
 .dropdown-content a {
@@ -180,7 +190,7 @@
 .menu-content{
     display: none;
     width: 150px;
-    background-color: rgba(118, 207, 161, 0.59);
+    background-color: var(--color-primary);
     font-size: larger;
     text-align: start;
     line-height: var(--spacing-large);
@@ -189,6 +199,7 @@
 .menu-content.show{
     display: block;
 }
+
 
 /*-------- Navigation bar------------*/
 
@@ -231,7 +242,7 @@
 }
 
 .horizontal-nav a:hover{
-    background-color: rgba(167, 201, 160, 0.723);
+    background-color: var(--color-secondary);
     border-radius: 5px;  
 }
 
@@ -243,7 +254,7 @@
     margin: 1rem;
     width: 350px;
     height: 150px;
-    background-color: rgb(192, 207, 188);
+    background-color: var(--color-secondary);
     border: 2px solid var(--color-primary);
     overflow-y: auto; 
     overflow-x: hidden;
@@ -269,3 +280,69 @@
     border-bottom: 1px solid black;
 }
 
+
+/* -------- Alerts --------*/ 
+
+.alert-container{
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.alert-paragraph{
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.alert__container--items{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    width: 800px;
+    height: 300px;
+    margin-top: 2rem;
+    gap: 2rem;
+}
+
+.information-alert{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    gap: 9rem;
+    align-items: center;
+    border: 2px solid darkblue;
+    background-color: rgb(170, 200, 217);
+    width: 500px;
+    height: 50px;
+}
+
+.error-alert{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    gap: 10rem;
+    align-items: center;
+    border: 2px solid darkgoldenrod;
+    background-color: rgb(231, 231, 183);
+    width: 500px;
+    height: 50px;
+}
+
+.information-alert, .error-alert {
+    display: none;
+}
+
+.alert-popup.visible {
+    display: flex; /* Visa när "visible" läggs till */
+}
+
+.close-alert{
+    width: 50px;
+    height: 20px;
+}
