@@ -15,6 +15,13 @@ tabTitleButtons.forEach((tabbutton, index) => {
     });
 })
 
+// * Toggle
+const heartIcon = document.querySelector(".heart-icon");
+
+heartIcon.addEventListener("click", () => {
+    heartIcon.classList.toggle("liked");
+});
+
 // * Dropdown 
 
 const dropdownToggle = document.querySelector(".dropbtn");
@@ -52,3 +59,37 @@ closeAlert.forEach(closeBtn => {                            //se mer här!
         alert.classList.remove("visible");
     });
 });
+
+
+// * click tooltip
+const tooltipBtn = document.querySelector(".tooltip-button");
+const tooltip = document.querySelector(".tooltip-click-text");
+
+tooltipBtn.addEventListener("click", () => {
+    tooltip.classList.toggle("visible");
+});
+
+
+// * toast 
+
+const toastSuccessBtn = document.querySelector(".toast__success--btn");
+const toastErrorBtn = document.querySelector(".toast__error--btn");
+const toastSuccess = document.querySelector(".toast-success");
+const toastError = document.querySelector(".toast-error"); 
+
+function showToast(element){
+    element.classList.remove("toast");
+    setTimeout(() => {
+    element.classList.add("toast"); 
+    }, 3000);
+};
+
+toastSuccessBtn.addEventListener("click", () => {
+    showToast(toastSuccess); 
+});
+
+toastErrorBtn.addEventListener("click", () => {
+    showToast(toastError);
+});
+
+

@@ -1,21 +1,22 @@
-
-/*------------buttons--------- */
-
-.button-container {
+.component-container{
     width: 100%;
-    height: 60vh;
+    height: 650px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.content__container--button {
+.component__container--paragraph{
     width: 500px;
     display: flex;
     flex-direction: column;
     text-align: center;
+    font-size: larger;
 }
+
+
+/*------------* Button Component *------------*/
 
 .button__container--items{
     display: flex;
@@ -23,53 +24,35 @@
     justify-content: center;
     margin-top: 1rem;
     gap: var(--spacing-large);
-
-    
 }
 
 .button-primary{
-    width: 200px;
-    height: 100px;
+    width: 150px;
+    height: 50px;
     font-size: var(--font-size-base);
-    border-radius: 4px;
+    border-radius: 20px;
     cursor: pointer;
     align-self: center;
 }
-.button-primary:hover {
+
+.button-primary:hover{
     background-color: var(--color-primary);
 }
 
 .button-disabled{
-    width: 200px;
-    height: 100px;
+    width: 150px;
+    height: 50px;
     font-size: var(--font-size-base);
-    border-radius: 4px;
+    border-radius: 20px;
     align-self: center;
-    cursor: not-allowed;
-    
+    cursor: not-allowed; 
 }
 
+/*------------* Card Component *------------*/
 
-/*---------card component----------*/ 
-
-.card-container{
-    width: 100%;
-    height: 80vh;
+.card__container--items{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.card__container--paragraph{
-    width: 500px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
-
-.card-display{
-    display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 2rem;
@@ -83,7 +66,7 @@
     transition: 0.3s;
 }
 
-.card__type--1 img, .card__type--2 img {
+.card__type--1 img, .flip-card-front img {
     margin-top: 1rem;
     width: 150px;
     height: 170px; 
@@ -93,34 +76,111 @@
     box-shadow: 0 10px 10px 10px rgba(0,0,0,0.2);
 }
 
-.card__type--2{
+.flip-card{
     width: 200px;
     height: 300px;
     margin-top: var(--spacing-small);
-    background-color: rgb(180, 192, 170);
+    perspective: 1000px;
+    border: 1px solid rgb(52, 77, 60);  
 }
 
-
-/*-------- Modal ---------------*/
-
-
-/*-------- Dropdown ------------*/
-
-.dropdown-container{
+.flip-card-inner{
+    position: relative;
     width: 100%;
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    height: 100%;
+    transition: transform 0.9s;
+    transform-style: preserve-3d;
 }
 
-.dropdown-paragraph{
-    width: 500px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; 
+    backface-visibility: hidden;
 }
+
+.flip-card-back {
+    background-color: rgb(180, 192, 170);
+    color: var(--text-color);
+    transform: rotateY(180deg);
+}
+
+/*------------* Toggle Component *------------*/
+
+.toggle__container--items{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    height: 200px;
+    gap: 5rem;
+}
+
+.heart-icon{
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-image: url(../assets/icons/favorite_24dp_000000_FILL0_wght400_GRAD0_opsz24\ \(1\).svg);
+}
+
+.heart-icon.liked{
+    background-image: url(../assets/icons/filled-heart.svg);
+    transform: scale(1.2); 
+}
+
+.toggle-switch{
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+}
+
+.toggle-switch input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 30px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 3px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: #4caf50;
+}
+
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
+
+/*------------* Dropdown Component *------------*/
 
 .dropdown__container--items{
     display: flex;
@@ -131,7 +191,7 @@
 }
 
 .dropdown__navbar {
-    width: 300px;
+    width: 250px;
     height: 40px;
     margin-top: 1rem;
     display: flex;
@@ -142,7 +202,7 @@
 }
 
 .dropdown__navbar a {
-    font-size: larger;
+    font-size: medium;
 }
 
 .dropbtn{
@@ -151,7 +211,7 @@
     text-align: left;
     border: none;
     font-family:'nunito';
-    font-size: larger;
+    font-size: medium;
     background-color: var(--color-primary);
     
 }
@@ -200,42 +260,33 @@
     display: block;
 }
 
-
-/*-------- Navigation bar------------*/
+/*------------* Navigation Component *------------*/
 
 .navigation-container{
     width: 100%;
-    height: 80vh;
+    height: 600px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.navigation-paragraph{
-    width: 800px;
+.navigation__container--items{
+    width: 100%;
+    height: 300px;
     display: flex;
     flex-direction: column;
-    text-align: center;
+    align-items: center;
 }
-
-.navigation__container--items{
-    display: flex;
-    flex-direction: row;
-    width: 800px;
-    height: 200px;
-    gap: 5rem;
-}
-
 .horizontal-nav{
     display: flex;
-    margin: 1rem;
+    margin: 2rem;
     align-items: center;
     justify-content: center;
     border-radius: 15px;
     gap: 3rem;
-    width: 350px;
-    height: 40px;
+    width: 400px;
+    height: 50px;
     font-size: larger;
     background-color: var(--color-primary);
     border-bottom: 1px solid black;
@@ -252,7 +303,7 @@
     align-items: center;
     background-color: rgba(178, 197, 167, 0.876);
     margin: 1rem;
-    width: 350px;
+    width: 300px;
     height: 150px;
     background-color: var(--color-secondary);
     border: 2px solid var(--color-primary);
@@ -280,44 +331,25 @@
     border-bottom: 1px solid black;
 }
 
-
-/* -------- Alerts --------*/ 
-
-.alert-container{
-    width: 100%;
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.alert-paragraph{
-    width: 800px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
+/*------------* Alert Component *------------*/
 
 .alert__container--items{
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-    width: 800px;
+    width: 500px;
     height: 300px;
     margin-top: 2rem;
     gap: 2rem;
 }
-
 .information-alert{
     display: flex;
     flex-direction: row;
     justify-content:center;
-    gap: 9rem;
+    gap: 7rem;
     align-items: center;
-    border: 2px solid darkblue;
-    background-color: rgb(170, 200, 217);
+    border: 2px solid #00008b;
+    background-color: #aac8d9;
     width: 500px;
     height: 50px;
 }
@@ -326,10 +358,10 @@
     display: flex;
     flex-direction: row;
     justify-content:center;
-    gap: 10rem;
+    gap: 8.8rem;
     align-items: center;
-    border: 2px solid darkgoldenrod;
-    background-color: rgb(231, 231, 183);
+    border: 2px solid #b8860b;
+    background-color: #e7e7b7;
     width: 500px;
     height: 50px;
 }
@@ -339,10 +371,134 @@
 }
 
 .alert-popup.visible {
-    display: flex; /* Visa när "visible" läggs till */
+    display: flex; 
 }
 
 .close-alert{
     width: 50px;
     height: 20px;
+}
+
+/*------------* Tooltip Component *------------*/
+
+.tooltips__container--items{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100px;
+    margin-top: 2rem;
+    gap: 2rem;
+}
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    font-size: larger;
+    color: darkgreen;
+}
+.tooltip-text {
+    visibility: hidden;
+    width: 120px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    border-radius: 4px;
+
+    /* Positionering */
+    position: absolute;
+    bottom: 125%; /* Flytta tooltipen ovanför elementet */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+
+    /* Animation/övergång */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tooltip-click{
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip-button{
+    cursor: pointer;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.tooltip-click-text{
+    display: none;
+    width: 200px;
+    background-color: #555;
+    color: white;
+    text-align: center;
+    padding: 8px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 125%; /* Placera ovanför knappen */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    white-space: nowrap;
+}
+
+.tooltip-click-text.visible {
+    display: block;
+}
+
+/*------------* Toast Component *------------*/
+.toast__container--items{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: var(--spacing-large);
+}
+
+.toast__success--btn, .toast__error--btn {
+    display: block;
+    margin: var(--spacing-small);
+    width: 80px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: #aac8d9;
+    font-size: large;
+    cursor: pointer;
+}
+
+
+.toast-success{
+    position: fixed;
+    top: 200px;
+    right: 30px;
+    width: 300px;
+    height: 30px;
+    background-color: #add8e6;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.toast-error{
+    position: fixed;
+    top: 240px;
+    right: 30px;
+    width: 300px;
+    height: 30px;
+    background-color: rgb(221, 150, 115);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.toast {
+    display: none;
 }

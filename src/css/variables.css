@@ -18,3 +18,14 @@
     --font-size-large: 1.5rem;
     --font-size-x-large: 2rem; 
 }
+
+a{
+    color: var(--text-color);
+}
+
+@font-face {
+    font-family: 'nunito' ;
+    src: url(../assets/fonts/Nunito-Light.ttf);
+}
+
+
