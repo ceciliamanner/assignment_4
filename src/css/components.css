@@ -1,6 +1,6 @@
 .component-container{
     width: 100%;
-    height: 650px;
+    height: 700px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,7 +12,10 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    font-size: larger;
+    font-size: 25px;
+}
+h2{
+    font-size: 40px;
 }
 
 
@@ -59,8 +62,8 @@
 }
 
 .card__type--1{
-    width: 200px;
-    height: 300px;
+    width: 250px;
+    height: 350px;
     margin-top: var(--spacing-small);
     box-shadow: 0 8px 8px 8px rgba(27, 25, 27, 0.2);
     transition: 0.3s;
@@ -68,20 +71,21 @@
 
 .card__type--1 img, .flip-card-front img {
     margin-top: 1rem;
-    width: 150px;
-    height: 170px; 
+    width: 200px;
+    height: 210px; 
 }
 
 .card__type--1:hover{
     box-shadow: 0 10px 10px 10px rgba(0,0,0,0.2);
+    background-color: rgb(202, 223, 197);
 }
 
 .flip-card{
-    width: 200px;
-    height: 300px;
+    width: 250px;
+    height: 350px;
     margin-top: var(--spacing-small);
     perspective: 1000px;
-    border: 1px solid rgb(52, 77, 60);  
+    background-color: #cacec7; 
 }
 
 .flip-card-inner{
@@ -105,7 +109,6 @@
 }
 
 .flip-card-back {
-    background-color: rgb(180, 192, 170);
     color: var(--text-color);
     transform: rotateY(180deg);
 }
@@ -137,8 +140,8 @@
 .toggle-switch{
     position: relative;
     display: inline-block;
-    width: 50px;
-    height: 25px;
+    width: 70px;
+    height: 40px;
 }
 
 .toggle-switch input{
@@ -163,8 +166,8 @@
 .slider:before {
     position: absolute;
     content: "";
-    height: 18px;
-    width: 18px;
+    height: 35px;
+    width: 35px;
     left: 4px;
     bottom: 3px;
     background-color: white;
@@ -191,6 +194,7 @@ input:checked + .slider:before {
 }
 
 .dropdown__navbar {
+    display: inline;
     width: 250px;
     height: 40px;
     margin-top: 1rem;
@@ -206,11 +210,8 @@ input:checked + .slider:before {
 }
 
 .dropbtn{
-    width: 80px;
-    height: 20px;
     text-align: left;
     border: none;
-    font-family:'nunito';
     font-size: medium;
     background-color: var(--color-primary);
     
@@ -263,6 +264,7 @@ input:checked + .slider:before {
 /*------------* Navigation Component *------------*/
 
 .navigation-container{
+    margin-top: 5rem;
     width: 100%;
     height: 600px;
     display: flex;
@@ -287,7 +289,7 @@ input:checked + .slider:before {
     gap: 3rem;
     width: 400px;
     height: 50px;
-    font-size: larger;
+    font-size: large;
     background-color: var(--color-primary);
     border-bottom: 1px solid black;
 }
@@ -310,6 +312,7 @@ input:checked + .slider:before {
     overflow-y: auto; 
     overflow-x: hidden;
     position: relative; 
+    font-size: medium;
 }
 
 .fixed-nav{
@@ -319,7 +322,7 @@ input:checked + .slider:before {
     border-radius: 15px;
     gap: 1rem;
     margin-top: 0.5rem;
-    width: 320px;
+    width: 300px;
     height: 40px;
     font-size: larger;
     background-color: var(--color-primary);
@@ -393,7 +396,7 @@ input:checked + .slider:before {
     position: relative;
     display: inline-block;
     cursor: pointer;
-    font-size: larger;
+    font-size: 25px;
     color: darkgreen;
 }
 .tooltip-text {
@@ -405,14 +408,11 @@ input:checked + .slider:before {
     padding: 5px;
     border-radius: 4px;
 
-    /* Positionering */
     position: absolute;
-    bottom: 125%; /* Flytta tooltipen ovanför elementet */
+    bottom: 125%; 
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
-
-    /* Animation/övergång */
     opacity: 0;
     transition: opacity 0.3s;
 }
@@ -429,7 +429,7 @@ input:checked + .slider:before {
 .tooltip-button{
     cursor: pointer;
     padding: 10px 15px;
-    font-size: 16px;
+    font-size: 20px;
     border: 1px solid #ccc;
     background-color: #f0f0f0;
     border-radius: 8px;
@@ -468,11 +468,11 @@ input:checked + .slider:before {
 .toast__success--btn, .toast__error--btn {
     display: block;
     margin: var(--spacing-small);
-    width: 80px;
-    height: 30px;
+    width: 130px;
+    height: 50px;
     border-radius: 10px;
-    background-color: #aac8d9;
-    font-size: large;
+    background-color: #c5cbcf;
+    font-size: 25px;
     cursor: pointer;
 }
 
